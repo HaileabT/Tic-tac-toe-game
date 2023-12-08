@@ -148,11 +148,4 @@ function winnerScr(winner){
         document.querySelectorAll(".scores")[1].innerHTML = `Player X  &nbsp;&nbsp;&nbsp;&nbsp; <span>${playersWon[0]} - ${playersWon[1]}</span>  &nbsp;&nbsp;&nbsp;&nbsp; Player O`;
         document.querySelector(".player-won").innerText = `Player ${players[winner]} has won!`;
     }
-    // goBk.onclick = () => {
-    //     gameBoard.classList.remove("blur");
-    //     winnerScreen.style.display = "none";
-    //     resetBtn.disabled = false;
-    // resetBtn.style.cursor = "pointer";
-    //     resetGame(occupied, box);
-    // }
 }
