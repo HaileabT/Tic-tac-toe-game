@@ -67,7 +67,7 @@ function checkGame(array){
 function resetGame(array, anotherArray){
     for (let i = 0; i<9; i++){
         array[i] = 0;
-        anotherArray[i].innerText = " ";
+        anotherArray[i].innerText = "";
     }
     current = 0;
     curPlayer.innerText = `Player ${players[current]}`;
@@ -136,24 +136,23 @@ function winnerScr(winner){
     winnerScreen.style.display = "grid";
     resetBtn.disabled = true;
     resetBtn.style.cursor = "default";
+    goBk.innerText = "Play Again";
     if (winner === -1){
         document.querySelectorAll(".scores")[1].style.display = "none";
         document.querySelector(".player-won").innerText = `It's a draw!`; 
-        goBk.innerText = "Play Again";
     }
     else{
         playersWon[winner]++;
         document.querySelectorAll(".scores")[1].style.display = "block";
-        goBk.innerText = "Play Again";
-    document.querySelectorAll(".scores")[0].innerHTML = `Player X  &nbsp;&nbsp;&nbsp;&nbsp; <span>${playersWon[0]} - ${playersWon[1]}</span>  &nbsp;&nbsp;&nbsp;&nbsp; Player O`;
-    document.querySelectorAll(".scores")[1].innerHTML = `Player X  &nbsp;&nbsp;&nbsp;&nbsp; <span>${playersWon[0]} - ${playersWon[1]}</span>  &nbsp;&nbsp;&nbsp;&nbsp; Player O`;
+        document.querySelectorAll(".scores")[0].innerHTML = `Player X  &nbsp;&nbsp;&nbsp;&nbsp; <span>${playersWon[0]} - ${playersWon[1]}</span>  &nbsp;&nbsp;&nbsp;&nbsp; Player O`;
+        document.querySelectorAll(".scores")[1].innerHTML = `Player X  &nbsp;&nbsp;&nbsp;&nbsp; <span>${playersWon[0]} - ${playersWon[1]}</span>  &nbsp;&nbsp;&nbsp;&nbsp; Player O`;
         document.querySelector(".player-won").innerText = `Player ${players[winner]} has won!`;
     }
-    goBk.onclick = () => {
-        gameBoard.classList.remove("blur");
-        winnerScreen.style.display = "none";
-        resetBtn.disabled = false;
-    resetBtn.style.cursor = "pointer";
-        resetGame(occupied, box);
-    }
+    // goBk.onclick = () => {
+    //     gameBoard.classList.remove("blur");
+    //     winnerScreen.style.display = "none";
+    //     resetBtn.disabled = false;
+    // resetBtn.style.cursor = "pointer";
+    //     resetGame(occupied, box);
+    // }
 }
